@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+Parameters:
+  S3Bucket:
+    Type: String
+
+Resources:
+  LambdaLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      CompatibleRuntimes:
+        - nodejs8.10
+      ContentUri:
+        Bucket: !Ref S3Bucket
+        Key: lambda-layer.zip
+      LayerName: aws-lambda-puppeteer
+
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri:
+        Bucket: !Ref S3Bucket
+        Key: function-code.zip
+      Handler: index.handler
+      Layers:
+        - !Ref LambdaLayer
+      MemorySize: 512 # 1600 is recommended.
+      Timeout: 120
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: nodejs8.10
+
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: root
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:*
+            Resource: arn:aws:logs:*:*:*

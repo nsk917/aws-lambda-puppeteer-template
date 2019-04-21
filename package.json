@@ -1,0 +1,29 @@
+{
+  "name": "aws-lambda-puppeteer-template",
+  "version": "1.0.0",
+  "description": "AWS Lambdaでpuppeteerを動かすためのテンプレート",
+  "main": "index.js",
+  "scripts": {
+    "zip-layer": "./zip.sh",
+    "zip-code": "zip -9 function-code.zip index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsk917/aws-lambda-puppeteer-template.git"
+  },
+  "author": {
+    "name": "nsk917"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nsk917/aws-lambda-puppeteer-template/issues"
+  },
+  "homepage": "https://github.com/nsk917/aws-lambda-puppeteer-template#readme",
+  "dependencies": {
+    "chrome-aws-lambda": "^1.14.0",
+    "puppeteer-core": "^1.14.0"
+  },
+  "devDependencies": {
+    "@types/puppeteer-core": "^1.9.0"
+  }
+}
