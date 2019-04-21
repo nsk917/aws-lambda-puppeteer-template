@@ -1,11 +1,13 @@
 #!/bin/bash -x
 
 DIR=$(cd $(dirname $0); pwd)
+mkdir $DIR/nodejs
+cp $DIR/package*.json $DIR/nodejs/
+rm -rf $DIR/nodejs/node_modules
+
 cd $DIR/nodejs
-cp $DIR/package*.json .
-rm -rf node_modules
 npm isntall --production
-rm -rf package*.json
+rm -rf $DIR/nodejs/package*.json
 
 cd $DIR
 zip -9 -r lambda-layer.zip nodejs
