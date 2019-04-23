@@ -4,8 +4,7 @@
   "description": "AWS Lambdaでpuppeteerを動かすためのテンプレート",
   "main": "index.js",
   "scripts": {
-    "zip-layer": "/bin/bash zip.sh",
-    "zip-code": "zip -9 function-code.zip index.js"
+    "zip-layer": "/bin/bash -x zip.sh"
   },
   "repository": {
     "type": "git",

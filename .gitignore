@@ -1,4 +1,5 @@
 *.zip
+deploy.yaml
 
 # Logs
 logs
