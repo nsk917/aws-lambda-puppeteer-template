@@ -33,8 +33,7 @@ aws cloudformation deploy \
  --stack-name aws-lambda-puppeteer \
  --template-file deploy.yaml \
  --capabilities CAPABILITY_IAM \
- --no-fail-on-empty-changeset \
- --parameter-overrides S3Bucket=aws-lambda-layer-$RAND
+ --no-fail-on-empty-changeset
 ```
 
 ## Testing

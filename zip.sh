@@ -8,5 +8,4 @@ cp $DIR/package*.json $DIR/nodejs/
 npm isntall --production --prefix nodejs
 rm -rf $DIR/nodejs/package*.json
 
-cd $DIR
 zip -9 -r lambda-layer.zip nodejs
