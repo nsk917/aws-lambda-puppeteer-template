@@ -51,14 +51,14 @@ docker run --rm --mount type=bind,src=$(pwd),dst=/var/task lambci/lambda:nodejs8
 
 ## Reference
 
-AWS Serverless Application Model (SAM)
+AWS Serverless Application Model (SAM)  
 https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md
 
-chrome-aws-lambda
+chrome-aws-lambda  
 https://github.com/alixaxel/chrome-aws-lambda
 
-chrome-aws-lambda を使う理由
+chrome-aws-lambda を使う理由  
 https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-on-aws-lambda
 
-AWS Lambda ( Typescript ) の Lambda Layers 活用、開発、デプロイ考察
+AWS Lambda ( Typescript ) の Lambda Layers 活用、開発、デプロイ考察  
 https://dev.classmethod.jp/server-side/serverless/aws-lambda-typescript-lambda-layers-deploy/
