@@ -46,7 +46,7 @@ Linux のほうは動作するかどうか確かめたことはない
 docker run --rm --mount type=bind,src=C:/<path>/aws-lambda-puppeteer-template,dst=/var/task lambci/lambda:nodejs8.10 index.handler
 
 # Linux
-docker run --rm --mount type=bind,src=\$(pwd),dst=/var/task lambci/lambda:nodejs8.10 index.handler
+docker run --rm --mount type=bind,src=$(pwd),dst=/var/task lambci/lambda:nodejs8.10 index.handler
 ```
 
 ## Reference
