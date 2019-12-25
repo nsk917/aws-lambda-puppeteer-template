@@ -51,7 +51,7 @@ docker run --rm --mount type=bind,src=$(pwd),dst=/var/task lambci/lambda:nodejs8
 
 ## Reference
 
-PuppeteerをAWS Lambda上で動かすためのテンプレートを作った
+PuppeteerをAWS Lambda上で動かすためのテンプレートを作った  
 https://qiita.com/ns_k/items/ded8d51627005bd8309a
 
 AWS Serverless Application Model (SAM)  
